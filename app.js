@@ -50,10 +50,10 @@ io.sockets.on('connection', function (socket) {
 
   console.log("client connected");
 
-  var stream = T.stream('statuses/filter', { track: 'soundcloud' });
+  var stream = T.stream('statuses/filter', { track: ['youtube', 'soundcloud'] });
 
   stream.on('tweet', function(tweet) {
-    require('./helpers/soundcloud').sc(tweet, function(obj) {
+    require('./helpers/songify').songify(tweet, function(obj) {
       if (obj) {
         console.log(obj);
         socket.emit('newTweet', obj);
