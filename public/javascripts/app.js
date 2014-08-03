@@ -23,33 +23,22 @@ socket.on('newTweet', function (data) {
 
 
 var addToMap = function(data) {
-  console.log("mapping out the tweet");
   var coords = data.coordinates;  // lng, lat
   var lat = coords[1];
   var lng = coords[0];
 
   var zoom = map.getZoom();
-  var tweet = new google.maps.Marker({
-    position: new google.maps.LatLng(lat, lng),
-    optimized: false,
-    draggable:false,
-    zIndex:10,
-    map: map
-  });
   var marker = new google.maps.Marker({
     position: new google.maps.LatLng(lat, lng),
     title: data.song_title,
     raiseOnDrag: false,
-    draggable:false,
-    animation: google.maps.Animation.DROP
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    map: map
   });
   
   // create the tooltip
   createInfoWindow(marker, data.song_title);
-  setTimeout(function(){
-    tweet.setMap(null);
-    marker.setMap(map);
-  }, 2500);
 }
 
 var lastOpenInfoWin = null;
