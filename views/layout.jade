@@ -1,18 +1,19 @@
 doctype html
 html(lang="en")
   head
-    title= title
+    title= Singular
     meta(charset="utf-8")
 
     // Stylesheets
-    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
 
     // Scripts
     script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
     script(src="//connect.soundcloud.com/sdk.js")
     script(src="//w.soundcloud.com/player/api.js")
     script(src="//cdn.socket.io/socket.io-1.0.6.js")
-    script(src='/js/app.js')
+    script(src="https://maps.googleapis.com/maps/api/js?sensor=false")
+    script(src='/javascripts/app.js')
 
   body
     block content

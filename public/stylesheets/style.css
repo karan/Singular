@@ -1,8 +1,16 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html { height: 100% }
+
+body { height: 100%; margin: 0; padding: 0 }
+
+#map-canvas {
+  height: 100%;
+  width: 70%;
+  float: left;
 }
 
-a {
-  color: #00B7FF;
+#allsongs {
+  height: 100%;
+  width: 30%;
+  float: right;
+  padding: 10px;
 }

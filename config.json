@@ -1,9 +1,9 @@
 {
-  "consumer_key":"CONSUMER_KEY",
-  "consumer_secret":"CONSUMER_SECRET",
-  "oauth_token":"OATH_TOKEN",
-  "oauth_token_secret":"OAUTH_TOKEN_SECRET",
-  "gmaps":"GMAPS_API_KEY",
-  "app_name":"APP_NAME",
-  "track": "[WORDS_TO_TRACK]"
+  "twitter": {
+    "key": "7GumFl0T5WOpfqTyKgIgj2Cbh",
+    "secret": "3Iwz2aKx8a39yJVeT3m1cnrL79c0kYUbS1ZRkvsKlGWnkQYURN",
+    "oauth_token": "97194047-QrJ1RK7E5bCBJ4aQw6NxwZZ6KjVSbfUK6XobEh6ZU",
+    "oauth_token_secret": "Ge9X0FCCQK8iqGGaI7tzuKwMqw68V81Am9roroB0tomd2"
+  },
+  "maps": "AIzaSyA3hYYwgFRo135DXqVBZ_7Z8KzFnvv7cY4"
 }
