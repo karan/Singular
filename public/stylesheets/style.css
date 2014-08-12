@@ -4,28 +4,39 @@ body { height: 100%; margin: 0; padding: 0 }
 
 #map-canvas {
   height: 100%;
-  width: 50%;
+  width: 60%;
   float: left;
 }
 
 #allsongs {
   height: 100%;
-  width: 50%;
+  width: 40%;
   float: right;
+  background: #111111;
+}
+
+.row {
+  display: table;
+  width: 100%;
 }
 
 .user {
   width: 20%;
-  display: inline-block;
+  display: table-cell;
   text-align: center;
-  vertical-align: top;
+  vertical-align: middle;
+  float: none;
 }
 
 img.profilePic {
   border-radius: 100%;
   display: block;
   margin: 0 auto;
+  border: 2px solid #fff;
+  margin-bottom: 10px;
 }
+
 a.username {
   display: block;
+  color: #DDDDDD;
 }
