@@ -1,13 +1,3 @@
-// var data = { tweet_id: '499058870862741504',
-// tweeted_by: 'ooiamandiinha',
-// tweeted_by_photo: 'http://pbs.twimg.com/profile_images/463508828827705344/DV7FTlNk_normal.jpeg',
-// song_url: 'https://www.youtube.com/watch?v=oet8ecpka_s',
-// coordinates: [ -51.0952004, -29.9187868 ],
-// song_source: 'yt',
-// artwork_url: 'http://i.ytimg.com/vi/Oet8eCpKA_s/hqdefault.jpg',
-// song_id: 'Oet8eCpKA_s',
-// song_title: 'Armandinho-Ursinho de dormir' };
-
 var map;
 
 $(document).ready(function() {
@@ -24,24 +14,17 @@ $(document).ready(function() {
 
   map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-//   for (var i = 0; i < 10; i++) {
-//   console.log(data);
-//   addToMap(data);
-//   addToSidebar(data);
-// }
+  var socket = io.connect('http://localhost:8888');
+  socket.on('newTweet', function (data) {
+    console.log(data);
+    addToMap(data);
+    // addToSidebar(data);
+  });
 
 });
 
-var socket = io.connect('http://localhost:8888');
 
-socket.on('newTweet', function (data) {
-  console.log(data);
-  addToMap(data);
-  addToSidebar(data);
-});
-
-
-var addToMap = function(data) {
+function addToMap(data) {
   var coords = data.coordinates;  // lng, lat
   var lat = coords[1];
   var lng = coords[0];
@@ -60,7 +43,8 @@ var addToMap = function(data) {
   createInfoWindow(marker, data.song_title);
 }
 
-var addToSidebar = function(data) {
+function addToSidebar(data, marker, infowindow) {
+  console.log("adding to sidebar");
   var userImg = '<img src="' + data.tweeted_by_photo + '" class="profilePic">';
   var username = '<a href="https://twitter.com/' + data.tweeted_by + '/status/' + data.tweet_id + '" class="username" target="_blank">' + data.tweeted_by + '</a>';
   var playerCode;
@@ -71,22 +55,27 @@ var addToSidebar = function(data) {
   }
   var html = '<div class="row" id="' + data.tweet_id + '"><div class="user">' + userImg + username + '</div>' + playerCode + '</div><hr>';
   $('#allsongs').prepend(html);
+
   $('#' + data.tweet_id).bind("mouseenter", function (event) {
     google.maps.event.trigger(marker, 'click');
   });
 }
 
 var lastOpenInfoWin = null;
+
 function createInfoWindow(marker, text) {
   //create an infowindow for this marker
   var infowindow = new google.maps.InfoWindow({
     content: text,
-    maxWidth:150
+    maxWidth: 150
   });
   //open infowindo on click event on marker.
   google.maps.event.addListener(marker, 'click', function() {
-    if(lastOpenInfoWin) lastOpenInfoWin.close();
+    if(lastOpenInfoWin) {
+      lastOpenInfoWin.close();
+    }
     lastOpenInfoWin = infowindow;
-    infowindow.open(marker.get('map'), marker);
+    return infowindow.open(marker.get('map'), marker);
   });
+  addToSidebar(data, marker, infowindow);
 }
