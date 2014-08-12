@@ -61,7 +61,6 @@ var addToMap = function(data) {
 }
 
 var addToSidebar = function(data) {
-  console.log("adding to sidebar");
   var userImg = '<img src="' + data.tweeted_by_photo + '" class="profilePic">';
   var username = '<a href="https://twitter.com/' + data.tweeted_by + '/status/' + data.tweet_id + '" class="username" target="_blank">' + data.tweeted_by + '</a>';
   var playerCode;
@@ -70,9 +69,7 @@ var addToSidebar = function(data) {
   } else {
     playerCode = '<iframe id="ytplayer" type="text/html" width="100%" src="http://www.youtube.com/embed/' + data.song_id + '?autoplay=0" frameborder="0"/>';
   }
-  console.log(playerCode);
   var html = '<div class="row" id="' + data.tweet_id + '"><div class="user">' + userImg + username + '</div>' + playerCode + '</div><hr>';
-  console.log(html);
   $('#allsongs').prepend(html);
   $('#' + data.tweet_id).bind("mouseenter", function (event) {
     google.maps.event.trigger(marker, 'click');
