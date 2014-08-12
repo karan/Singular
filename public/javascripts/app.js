@@ -17,8 +17,8 @@ $(document).ready(function() {
   var socket = io.connect('http://localhost:8888');
   socket.on('newTweet', function (data) {
     console.log(data);
-    addToMap(data);
-    // addToSidebar(data);
+    var marker = addToMap(data);
+    addToSidebar(data, marker);
   });
 
 });
@@ -41,9 +41,10 @@ function addToMap(data) {
   
   // create the tooltip
   createInfoWindow(marker, data.song_title);
+  return marker;
 }
 
-function addToSidebar(data, marker, infowindow) {
+function addToSidebar(data, marker) {
   console.log("adding to sidebar");
   var userImg = '<img src="' + data.tweeted_by_photo + '" class="profilePic">';
   var username = '<a href="https://twitter.com/' + data.tweeted_by + '/status/' + data.tweet_id + '" class="username" target="_blank">' + data.tweeted_by + '</a>';
@@ -77,5 +78,4 @@ function createInfoWindow(marker, text) {
     lastOpenInfoWin = infowindow;
     return infowindow.open(marker.get('map'), marker);
   });
-  addToSidebar(data, marker, infowindow);
 }
