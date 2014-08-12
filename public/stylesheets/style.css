@@ -4,12 +4,28 @@ body { height: 100%; margin: 0; padding: 0 }
 
 #map-canvas {
   height: 100%;
-  width: 70%;
+  width: 50%;
   float: left;
 }
 
 #allsongs {
   height: 100%;
-  width: 30%;
+  width: 50%;
   float: right;
+}
+
+.user {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+}
+
+img.profilePic {
+  border-radius: 100%;
+  display: block;
+  margin: 0 auto;
+}
+a.username {
+  display: block;
 }
