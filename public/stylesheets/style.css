@@ -85,6 +85,11 @@ a.username {
   color: #DDDDDD;
 }
 
+a.infowindowUsername {
+  display: block;
+  color: #0074D9;
+}
+
 
 #logo {
   vertical-align: middle;
