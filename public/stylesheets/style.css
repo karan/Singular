@@ -32,7 +32,13 @@
 
 html { height: 100% }
 
-body { height: 100%; margin: 0; padding: 0; font-family: 'Open Sans'; }
+body { 
+  height: 100%; 
+  margin: 0; 
+  padding: 0; 
+  font-family: 'Open Sans'; 
+  background: #111111;
+}
 
 #map-canvas {
   height: 100%;
