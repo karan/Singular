@@ -14,8 +14,6 @@ module.exports.songify = function(tweet, callback) {
 
   var url = tweet.entities.urls[0].expanded_url.toLowerCase();
 
-  console.log(url);
-
   if ((url.indexOf("soundcloud.com") === -1) &&
       (url.indexOf("snd.sc") === -1) && 
       (url.indexOf("youtube.com") === -1) &&
