@@ -54,6 +54,9 @@ body { height: 100%; margin: 0; padding: 0; font-family: 'Open Sans'; }
   left: 0;
   bottom: 0;
   background: #fff;
+  -webkit-box-shadow: 0px 0px 11px 0px rgba(50, 50, 50, 1);
+  -moz-box-shadow: 0px 0px 11px 0px rgba(50, 50, 50, 1);
+  box-shadow: 0px 0px 11px 0px rgba(50, 50, 50, 1);
 }
 
 .row {
