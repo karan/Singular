@@ -50,7 +50,7 @@ function addToSidebar(data, marker) {
   var username = '<a href="https://twitter.com/' + data.tweeted_by + '/status/' + data.tweet_id + '" class="username" target="_blank">' + data.tweeted_by + '</a>';
   var playerCode;
   if (data.song_source === 'sc') {
-    playerCode = '<iframe id="sc-player" width="100%" height="100%" scrolling="no" frameborder="no", src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/'+song_id+'&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=true"></iframe>';
+    playerCode = '<iframe id="sc-player" width="100%" height="100%" scrolling="no" frameborder="no", src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/' + data.song_id + '&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=true"></iframe>';
   } else {
     playerCode = '<iframe id="ytplayer" type="text/html" width="100%" src="http://www.youtube.com/embed/' + data.song_id + '?autoplay=0" frameborder="0"/>';
   }

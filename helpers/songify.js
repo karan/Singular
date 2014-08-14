@@ -44,13 +44,14 @@ module.exports.songify = function(tweet, callback) {
 
   if (obj.song_source === 'sc') {
     var url = 'https://api.soundcloud.com/resolve.json?consumer_key=c2c242fd7d60a1165e6a0924f8e70138&url='+obj.song_url;
-    request({url: url, timeout: 500, followRedirect: true},
+    request({url: url, timeout: 3000, followRedirect: true},
       function(error, response, track) {
         if (!error && response.statusCode == 200) {
           track = JSON.parse(track);     
           obj.artwork_url = track.artwork_url;
           obj.song_id = track.id;
           obj.song_title = track.title;
+          console.log(obj);
           return callback(obj);
         }
     });
@@ -59,7 +60,7 @@ module.exports.songify = function(tweet, callback) {
     if (ytMatches) {
       ytID = ytMatches[2];
       var url = 'http://gdata.youtube.com/feeds/api/videos?q='+ytID+'&max-results=1&v=2&alt=jsonc';
-      request({url: url, timeout: 500, followRedirect: true},
+      request({url: url, timeout: 3000, followRedirect: true},
         function(error, response, track) {
           if (!error && response.statusCode == 200) {
             try {
