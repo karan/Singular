@@ -66,7 +66,7 @@ var lastOpenInfoWin = null;
 
 function createInfoWindow(marker, data) {
   //create an infowindow for this marker
-  var content = '<p><a href="https://twitter.com/' + data.tweeted_by + '/status/' + data.tweet_id + '" class="infowindowUsername" target="_blank">' + data.tweeted_by + '</a><br>' + data.song_title + '</p>';
+  var content = '<p><a href="https://twitter.com/' + data.tweeted_by + '/status/' + data.tweet_id + '" class="infowindowUsername" target="_blank">@' + data.tweeted_by + '</a><br>' + data.song_title + '</p>';
   var infowindow = new google.maps.InfoWindow({
     content: content,
     maxWidth: 150
