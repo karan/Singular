@@ -10,6 +10,7 @@
     "jade": "*",
     "request": "^2.39.0",
     "socket.io": "",
-    "twit": "*"
+    "twit": "*",
+    "newrelic": "*"
   }
 }
