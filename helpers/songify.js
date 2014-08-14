@@ -51,7 +51,6 @@ module.exports.songify = function(tweet, callback) {
           obj.artwork_url = track.artwork_url;
           obj.song_id = track.id;
           obj.song_title = track.title;
-          console.log(obj);
           return callback(obj);
         }
     });
