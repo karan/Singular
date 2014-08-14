@@ -62,7 +62,12 @@ module.exports.songify = function(tweet, callback) {
       request({url: url, timeout: 500, followRedirect: true},
         function(error, response, track) {
           if (!error && response.statusCode == 200) {
-            track = JSON.parse(track);
+            try {
+              track = JSON.parse(track);              
+            } catch(err) {
+              console.log(err);
+              return callback(null);
+            }
             if (track && track.data && track.data.items && 
               track.data.items[0].category === 'Music') {
               
