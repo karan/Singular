@@ -22,8 +22,8 @@ $(document).ready(function() {
 
   map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-  var socket = io.connect('http://singular.goel.im/');
-  // var socket = io.connect();
+  // var socket = io.connect('http://singular.goel.im/');
+  var socket = io.connect();
   socket.on('newTweet', function (data) {
     console.log(data);
     var marker = addToMap(data);
