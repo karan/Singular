@@ -47,6 +47,11 @@ function addToMap(data) {
     animation: google.maps.Animation.DROP,
     map: map
   });
+
+  marker.setIcon(new google.maps.MarkerImage(
+    "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FF0000",
+    null, null, null, new google.maps.Size(15, 24)
+  ));
   
   // create the tooltip
   createInfoWindow(marker, data);
