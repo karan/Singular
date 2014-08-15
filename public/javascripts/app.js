@@ -2,6 +2,14 @@ var map;
 
 $(document).ready(function() {
 
+  $('.md-modal').addClass('md-show');
+  $('.sbg-help').on('click', function(e) {
+    $('.md-modal').addClass('md-show');
+  });
+  $('.md-close').on('click', function(e) {
+    $('.md-modal').removeClass('md-show');
+  });
+
   var mapOptions;
   mapOptions = void 0;
   mapOptions = {
@@ -14,7 +22,8 @@ $(document).ready(function() {
 
   map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-  var socket = io.connect('http://singular.goel.im/');
+  // var socket = io.connect('http://singular.goel.im/');
+  var socket = io.connect();
   socket.on('newTweet', function (data) {
     console.log(data);
     var marker = addToMap(data);
