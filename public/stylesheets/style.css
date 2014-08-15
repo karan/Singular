@@ -135,7 +135,7 @@ a.infowindowUsername {
 }
 
 #social {
-  min-width: 200px;
+  min-width: 100px;
   display: inline-block;
   float: right;
 }
@@ -147,7 +147,8 @@ a.infowindowUsername {
   padding-top: 7px;
   height: 50px;
   vertical-align: middle;
-  width: 70px;
+  min-width: 60px;
+  width: 25%;
   opacity: 1;
   text-align: center;
 }
@@ -196,7 +197,6 @@ a.infowindowUsername {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
-
   -webkit-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
@@ -236,4 +236,19 @@ a.infowindowUsername {
   margin-top: 20px;
   font-size: 0.9em;
   line-height: 1.9em;
+}
+
+@media only screen and (max-width : 768px) {
+  #tagline {
+    display:none;
+  }
+  #map-canvas {
+    width: 100%;
+  }
+  #allsongs {
+    display:none;
+  }
+  #logo {
+    margin: 0 10px;
+  }
 }
