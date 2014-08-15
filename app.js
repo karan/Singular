@@ -6,15 +6,15 @@ require('newrelic');
 
 var express = require('express');
 var routes = require('./routes');
-var http = require('http');
 var path = require('path');
-// var process = require('process');
 var config = require('./config.json');
 
 var twit = require('twit');
-var socketio = require('socket.io');
 
 var app = express();
+
+var server = require('http').createServer(app),
+    io = require('socket.io').listen(server);
 
 
 // all environments
@@ -43,8 +43,6 @@ process.on('uncaughtException', function (exception) {
 
 app.get('/', routes.index);
 
-
-var io = require('socket.io').listen(app.listen(app.get('port')));
 
 var T = new twit({
   consumer_key: config.twitter.key,
@@ -76,5 +74,5 @@ io.sockets.on('connection', function (socket) {
 });
 
 
-
+server.listen(app.get('port'));
 console.log("Server starter on port " + app.get('port'));
