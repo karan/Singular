@@ -24,7 +24,7 @@ $(document).ready(function() {
 
   // var host = location.origin.replace(/^http/, 'ws');
   var socket = io.connect('http://singular.goel.im/');
-  console.log(server);
+  console.log(socket);
 
   socket.on('newTweet', function (data) {
     console.log(data);
