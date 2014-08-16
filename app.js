@@ -66,7 +66,7 @@ io.sockets.on('connection', function (socket) {
     require('./helpers/songify').songify(tweet, function(obj) {
       if (obj) {
         console.log(obj);
-        socket.emit('newTweet', obj);
+        io.sockets.emit('newTweet', obj);
       }
     });
   });

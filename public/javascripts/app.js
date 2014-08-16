@@ -23,7 +23,7 @@ $(document).ready(function() {
   map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
   // var host = location.origin.replace(/^http/, 'ws');
-  var socket = io.connect(location.origin.replace);
+  var socket = io();
   console.log(socket);
 
   socket.on('newTweet', function (data) {
