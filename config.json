@@ -1,9 +1,9 @@
 {
   "twitter": {
-    "key": "7GumFl0T5WOpfqTyKgIgj2Cbh",
-    "secret": "3Iwz2aKx8a39yJVeT3m1cnrL79c0kYUbS1ZRkvsKlGWnkQYURN",
-    "oauth_token": "97194047-QrJ1RK7E5bCBJ4aQw6NxwZZ6KjVSbfUK6XobEh6ZU",
-    "oauth_token_secret": "Ge9X0FCCQK8iqGGaI7tzuKwMqw68V81Am9roroB0tomd2"
+    "key": "",
+    "secret": "",
+    "oauth_token": "",
+    "oauth_token_secret": ""
   },
-  "maps": "AIzaSyA3hYYwgFRo135DXqVBZ_7Z8KzFnvv7cY4"
+  "maps": ""
 }
